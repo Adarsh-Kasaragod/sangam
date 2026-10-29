@@ -11,13 +11,12 @@ services:
         source: /*
         destination: /index.html
 
-  # ── Backend (PHP Web Service) ───────────────────────────────────────────────
+  # ── Backend (PHP via Docker) ────────────────────────────────────────────────
   - type: web
     name: sangam-backend
-    runtime: php
+    runtime: docker
     rootDir: backend
-    buildCommand: echo "No build step needed"
-    startCommand: php -S 0.0.0.0:$PORT -t .
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: DB_HOST
         sync: false
