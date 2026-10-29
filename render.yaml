@@ -1,0 +1,35 @@
+services:
+  # ── Frontend (Static Site) ──────────────────────────────────────────────────
+  - type: web
+    name: sangam-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  # ── Backend (PHP Web Service) ───────────────────────────────────────────────
+  - type: web
+    name: sangam-backend
+    runtime: php
+    rootDir: backend
+    buildCommand: echo "No build step needed"
+    startCommand: php -S 0.0.0.0:$PORT -t .
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_NAME
+        value: "event_app"
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: ALLOWED_ORIGIN
+        sync: false
+      - key: APP_SECRET
+        sync: false
