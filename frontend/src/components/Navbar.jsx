@@ -77,7 +77,7 @@ export default function Navbar() {
           <div className="navbar-brand-icon" aria-hidden="true">S</div>
           <div>
             <span className="navbar-brand-name">Sangam</span>
-            <span className="navbar-brand-sub">College Events</span>
+            <span className="navbar-brand-sub">Events Portal</span>
           </div>
         </NavLink>
 

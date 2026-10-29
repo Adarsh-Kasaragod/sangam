@@ -1,0 +1,6 @@
+services:
+  - type: static
+    name: sangam-frontend
+    env: node
+    buildCommand: "npm ci && npm run build"
+    staticPublishPath: "dist"
