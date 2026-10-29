@@ -1,0 +1,199 @@
+/* frontend/src/styles/events.css */
+
+/* ── Hero section ─────────────────────────────────────────────────────────── */
+.events-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #7c3aed 100%);
+  color: white;
+  padding: var(--space-16) var(--page-padding);
+  text-align: center;
+}
+.events-hero h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: var(--space-3);
+  line-height: 1.15;
+}
+.events-hero p {
+  font-size: var(--font-size-lg);
+  opacity: 0.85;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ── Filter tabs ──────────────────────────────────────────────────────────── */
+.events-filters {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+.filter-btn {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-gray-600);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-gray-300);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.filter-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.filter-btn.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+/* ── Events grid ──────────────────────────────────────────────────────────── */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+/* ── Event card ───────────────────────────────────────────────────────────── */
+.event-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-200);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+.event-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+.event-card-image {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+}
+.event-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+.event-card:hover .event-card-image img { transform: scale(1.05); }
+
+.event-card-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-light), #ede9fe);
+  font-size: 3rem;
+}
+
+.event-card-badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+}
+
+.event-card-body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.event-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-card-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+.event-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+.event-meta-icon { font-size: 1rem; flex-shrink: 0; }
+
+.event-card-footer {
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.event-capacity-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+}
+
+/* ── Status Badge ─────────────────────────────────────────────────────────── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.status-badge.upcoming {
+  background: var(--color-success-light);
+  color: #14532d;
+}
+.status-badge.upcoming::before { background: var(--color-success); }
+.status-badge.past {
+  background: var(--color-gray-100);
+  color: var(--color-gray-600);
+}
+.status-badge.past::before { background: var(--color-gray-400); }
+.status-badge.closed {
+  background: var(--color-warning-light);
+  color: #78350f;
+}
+.status-badge.closed::before { background: var(--color-warning); }
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .events-grid { grid-template-columns: 1fr; }
+}
