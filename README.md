@@ -21,7 +21,7 @@ Sangam is the official campus events management web application for the college.
 
 ## 1. Project Overview
 
-Sangam is a full-stack web application built as part of a college project. The name *Sangam* (meaning "confluence" in Sanskrit) reflects the idea of bringing students and events together in one place.
+Sangam is a full-stack web application reflects the idea of bringing students and events together in one place.
 
 **Student-facing features** allow anyone to browse upcoming events, view event details, and register with their name, email, and phone number.
 
