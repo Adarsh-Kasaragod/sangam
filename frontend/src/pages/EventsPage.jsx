@@ -30,7 +30,7 @@ export default function EventsPage() {
       {/* Hero */}
       <div className="events-hero">
         <h1>Sangam</h1>
-        <p>All campus events in one place — workshops, seminars, fests and more at Parrophins College.</p>
+        <p>All campus events in one place — workshops, seminars, fests and more.</p>
       </div>
 
       <main className="container" style={{ padding: 'var(--space-10) var(--page-padding)' }}>

@@ -1,6 +1,6 @@
-# Sangam — Parrophins College Events Portal
+# Sangam — College Events Portal
 
-Sangam is the official campus events management web application for Parrophins College. It gives students a single place to discover and register for all college events — workshops, seminars, tech fests, and more — while giving administrators a secure dashboard to create, manage, and track events and registrations.
+Sangam is the official campus events management web application for the college. It gives students a single place to discover and register for all college events — workshops, seminars, tech fests, and more — while giving administrators a secure dashboard to create, manage, and track events and registrations.
 
 ---
 
@@ -524,4 +524,4 @@ event-app/
 
 ---
 
-*Developed by Adarsh Kasaragod — Parrophins College, 2026*
+*Developed by Adarsh Kasaragod, 2026*
